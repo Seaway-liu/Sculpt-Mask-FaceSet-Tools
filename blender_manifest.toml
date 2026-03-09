@@ -1,0 +1,19 @@
+schema_version = "1.0.0"
+
+id = "sculpt_mask_facesets_tools"
+version = "1.0.0"
+name = "Sculpt Mask FaceSets Tools"
+tagline = "This is a Blender sculpting support tools"
+maintainer = "Seaway Liu"
+type = "add-on"
+tags = ["Sculpt"]
+website = "https://github.com/Seaway-liu/Sculpt-Mask-FaceSet-Tools"
+
+blender_version_min = "4.5.0"
+#blender_version_max = "5.0.0"
+
+license = ["SPDX:GPL-3.0-or-later"]
+copyright = ["2002-2026 Seaway Liu"]
+
+#platforms = ["windows-x64"]
+#The author does not have the conditions to test whether the "macOS-arm64" and "Linux-x64" operating systems can be used normally.
