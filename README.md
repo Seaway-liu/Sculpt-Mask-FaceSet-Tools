@@ -2,6 +2,7 @@
 This is a Blender sculpting support tools!  
 这是一个Blender雕刻辅助工具! 
 
+https://github.com/Seaway-liu/Sculpt-Mask-FaceSet-Tools/blob/main/Sculpt_Mask_FaceSet_tools_EN.jpg
 
 An easy-to-use, user-friendly Sculpt Pie Menu support add-on for everyone from beginners to professionals.
 The tool design emphasizes clarity and efficiency, combining all the Mask and Face Sets commands scattered across the sculpting menu into a Pie Menu for convenient and quick access.
@@ -32,6 +33,9 @@ Note: The author does not have the conditions to test whether the "macOS-arm64" 
 
 --------------------------------------------------------------------------------------------
 这是一个Blender雕刻辅助工具!
+
+https://github.com/Seaway-liu/Sculpt-Mask-FaceSet-Tools/blob/main/Sculpt_Mask_FaceSet_tools_ZH.jpg
+
 一款易于使用、用户友好的Sculpt Pie Menu支持插件，适合从初学者到专业人士的所有人群。
 该工具设计注重清晰和效率，把分布在雕刻菜单中的Mask和Face Sets命令用Pie Menu全部展开，方便快速调用。
 
