@@ -2,12 +2,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 bl_info = {
-    "name": "Sculpt Mask & FaceSets Tools",
+    "name": "Sculpt Mask FaceSets Tools",
     "author": "Seaway Liu",
     'version': (1, 0, 0),
     "blender": (4, 5, 0),
     "location": "View3D > Sculpt Mode",
-    "description": "Sculpt Mask & FaceSets support Tools",
+    "description": "Sculpt Mask FaceSets support Tools",
     "warning": "",
     "location": "View3D",
     "category": "Sculpt",
@@ -886,46 +886,6 @@ class SCULPT_MASK_PIEMENU(Menu):
 ###############################################################   
               
 
-         
-class MESH_OT_check_and_enable_face_set_operators(bpy.types.Operator):
-    """Enable/Install Face Set Operators Addon"""
-    bl_idname = "mesh.check_and_enable_face_set_operators"
-    bl_label = "Face Set Operators"
-    bl_options = {'REGISTER', 'UNDO'}
-
-    def execute(self, context):
-        addon_module = "bl_ext.blender_org.face_set_operators"
-        extension_id = "face_set_operators"
-        
-        enabled_addons = bpy.context.preferences.addons.keys()
-        
-        if addon_module in enabled_addons:
-            self.report({'INFO'}, f"{addon_module} Enable")
-            return {'FINISHED'}
-        
-        try:
-            bpy.ops.preferences.addon_enable(module=addon_module)
-            self.report({'INFO'}, f"Enable: {addon_module}")
-            return {'FINISHED'}
-        except:
-            try:
-                repo_index = 0
-                bpy.ops.extensions.package_install(
-                    repo_index=repo_index, 
-                    pkg_id=extension_id
-                )
-                self.report({'INFO'}, f"Install Addon: {extension_id}")
-                bpy.ops.preferences.addon_enable(module=addon_module)
-                
-                return {'FINISHED'}
-            except Exception as e:
-                self.report({'ERROR'}, f"Error: {str(e)}")
-                return {'CANCELLED'}         
-
-
-      
-
-
 
 ###############################################################
 # AddonPreferences
@@ -1061,7 +1021,7 @@ class My_AddonPreferences(AddonPreferences):
 def load_post_handler(dummy):
     """Blender完全启动后加载保存的语言设置"""
     try:
-        addon_name = __name__
+        addon_name = __package__
         if addon_name in bpy.context.preferences.addons:
             addon_prefs = bpy.context.preferences.addons[addon_name].preferences
             if hasattr(addon_prefs, 'language'):
@@ -1073,8 +1033,9 @@ def load_post_handler(dummy):
 
 
 classes = [
-    SCULPT_MASK_PIEMENU,My_AddonPreferences,SCULPT_OT_Capture_Key,
-    MESH_OT_check_and_enable_face_set_operators,
+    SCULPT_MASK_PIEMENU,
+    My_AddonPreferences,
+    SCULPT_OT_Capture_Key,
 ] #--End
 
 
@@ -1094,7 +1055,7 @@ def register():
     
     #翻译-如果是重新加载插件，立即应用设置
     try:
-        addon_name = __name__
+        addon_name = __package__
         if addon_name in bpy.context.preferences.addons:
             addon_prefs = bpy.context.preferences.addons[addon_name].preferences
             if hasattr(addon_prefs, 'language'):
