@@ -13,7 +13,7 @@ blender_version_min = "4.5.0"
 #blender_version_max = "5.0.0"
 
 license = ["SPDX:GPL-3.0-or-later"]
-copyright = ["2002-2026 Seaway Liu"]
 
 #platforms = ["windows-x64"]
 #The author does not have the conditions to test whether the "macOS-arm64" and "Linux-x64" operating systems can be used normally.
+
